@@ -8,13 +8,13 @@
     mode=0644
 
 # Do A Checkout
-- name: checkout edx-platform repo into {{edxapp_code_dir}}
-  git: dest={{edxapp_code_dir}} repo={{edx_platform_repo}} version={{edx_platform_version}}
-  register: chkout
-  sudo_user: "{{ edxapp_user }}"
-  notify:
-  - "restart edxapp"
-  - "restart edxapp_workers"
+#- name: checkout edx-platform repo into {{edxapp_code_dir}}
+#  git: dest={{edxapp_code_dir}} repo={{edx_platform_repo}} version={{edx_platform_version}}
+#  register: chkout
+#  sudo_user: "{{ edxapp_user }}"
+#  notify:
+#  - "restart edxapp"
+#  - "restart edxapp_workers"
 
 - name: git clean after checking out edx-platform
   shell: cd {{edxapp_code_dir}} && git clean -xdf
